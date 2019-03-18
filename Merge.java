@@ -11,11 +11,23 @@ public class Merge{
       return;//void method, so don't return anything
     }
     int mid = data.length / 2;//middle index of data array
-    mergesort(data, 0, mid - 1);// mergesort left side
-    mergesort(data, mid + 1, hi);// mergesort right side
-    // merge
 
+    //create left array
+    int[] left = new int[mid];//temporary array to store left half of array
+    for(int i = 0; i < left.length; i++){
+      left[i] = data[i];//copying over values from data array to left array
+    }
+    mergesort(data, 0, left.length - 1);// mergesort left side
+
+    //create right array
+    int[] right = new int[data.length - mid];//temporary array to store right half of data array
+    for(int i = 0; i < right.length; i++){
+      right[i] = data[mid + i];//copying over values from data array to left array
+    }
+    mergesort(data, 0, right.length - 1);// mergesort right side
 
   }
+
+
 
 }
