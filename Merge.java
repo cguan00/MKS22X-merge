@@ -19,6 +19,7 @@ public class Merge{
     for(int i = 0; i < left.length; i++){
       left[i] = data[i];//copying over values from data array to left array
     }
+    // System.out.println(printArray(left));
     mergesort(left, 0, left.length - 1);//mergesort left side
 
     //create right array
@@ -26,10 +27,37 @@ public class Merge{
     for(int i = 0; i < right.length; i++){
       right[i] = data[mid + i];//copying over values from data array to right array
     }
+    // System.out.println(printArray(right));
     mergesort(right, 0, right.length - 1);//mergesort right side
 
     merge(data, left, right);//merge left and right sides together
   }
+
+  // public static void mergesort(int[] data, int lo, int hi){
+  //   if(lo >= hi){
+  //     return;//void method, so don't return anything
+  //   }
+  //   int mid = (data.length + 1) / 2;//middle index of data array and half of data length
+  //   // System.out.println(mid);
+  //
+  //   //create left array
+  //   int[] left = new int[mid];//temporary array to store left half of array
+  //   for(int i = 0; i < left.length; i++){
+  //     left[i] = data[lo + i];//copying over values from data array to left array
+  //   }
+  //   // System.out.println(printArray(left));
+  //   mergesort(left, 0, left.length - 1);//mergesort left side
+  //
+  //   //create right array
+  //   int[] right = new int[data.length - mid];//temporary array to store right half of data array
+  //   for(int i = 0; i < right.length; i++){
+  //     right[i] = data[mid + i];//copying over values from data array to right array
+  //   }
+  //   // System.out.println(printArray(right));
+  //   mergesort(right, 0, right.length - 1);//mergesort right side
+  //
+  //   merge(data, left, right);//merge left and right sides together
+  // }
 
 
   public static void merge(int[] data, int[] left, int[] right){
