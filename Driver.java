@@ -5,9 +5,14 @@ public class Driver{
     // Merge.mergesort(data1);
     // System.out.println(Merge.printArray(data1));
 
-    int[] data2 = {38, 27, 43, 3, 9, 82, 10};
-    System.out.println(Merge.printArray(data2));
-    Merge.mergesort(data2);
-    System.out.println(Merge.printArray(data2));
+    // int[] data2 = {38, 27, 43, 3, 9, 82, 10};
+    // System.out.println(Merge.printArray(data2));
+    // Merge.mergesort(data2);
+    // System.out.println(Merge.printArray(data2));
+
+    int[] data3 = {10, 50, 20, 70, 40};
+    System.out.println(Merge.printArray(data3));
+    Merge.insertionsort(data3);
+    System.out.println(Merge.printArray(data3));
   }
 }
