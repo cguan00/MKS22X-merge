@@ -105,15 +105,16 @@ public class Merge{
     return output;
   }
 
-  public static void insertionsort(int[] data){
-    insertionsort(data, 0, data.length - 1);
-  }
-
   public static void insertionsort(int[] data, int lo, int hi){
-    if(lo >= hi){
-      return;//base case
+    for(int i = lo + 1; i <= hi; i++){//loop through data, starting at index of lo + 1
+      int temp = data[i];//temporarily store the item you are looking at
+      int past = i;
+      while(past > lo && temp < data[past - 1]){
+        data[past] = data[past - 1];
+        past--;
+      }
+      data[past] = temp;
     }
-    int mid = (data.length + 1) / 2;
   }
 
   private static String name(int i){
