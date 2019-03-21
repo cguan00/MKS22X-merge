@@ -14,9 +14,13 @@ public class Merge{
   }
 
   public static void mergesort(int[] data, int lo, int hi){
-    if(lo >= hi){
-      return;//void method, so don't return anything
+    if(hi - lo <= 60){
+      insertionsort(data, lo, hi);
+      return;
     }
+    // if(lo >= hi){
+    //   return;//void method, so don't return anything
+    // }
     int mid = data.length / 2;//middle index of data array
 
     //create left array
@@ -37,32 +41,6 @@ public class Merge{
 
     merge(data, left, right);//merge left and right sides together
   }
-
-  // public static void mergesort(int[] data, int lo, int hi){
-  //   if(lo >= hi){
-  //     return;//void method, so don't return anything
-  //   }
-  //   int mid = (data.length + 1) / 2;//middle index of data array and half of data length
-  //   // System.out.println(mid);
-  //
-  //   //create left array
-  //   int[] left = new int[mid];//temporary array to store left half of array
-  //   for(int i = 0; i < left.length; i++){
-  //     left[i] = data[lo + i];//copying over values from data array to left array
-  //   }
-  //   // System.out.println(printArray(left));
-  //   mergesort(left, 0, left.length - 1);//mergesort left side
-  //
-  //   //create right array
-  //   int[] right = new int[data.length - mid];//temporary array to store right half of data array
-  //   for(int i = 0; i < right.length; i++){
-  //     right[i] = data[mid + i];//copying over values from data array to right array
-  //   }
-  //   // System.out.println(printArray(right));
-  //   mergesort(right, 0, right.length - 1);//mergesort right side
-  //
-  //   merge(data, left, right);//merge left and right sides together
-  // }
 
 
   public static void merge(int[] data, int[] left, int[] right){
@@ -129,7 +107,7 @@ public class Merge{
     return min + (int)(Math.random()*(max-min));
   }
 
-  private static int[]makeArray(int size,int type){
+  private static int[] makeArray(int size,int type){
     int[]ans =new int[size];
     if(type == STANDARD){
       for(int i = 0; i < size; i++){
@@ -176,6 +154,7 @@ public class Merge{
       * Test your sort here //yoursort(start);
       * Add code to switch which sort is tested by changing one of the args!
       */
+      mergesort(start);
      long elapsedTime = System.currentTimeMillis() - startTime;
      if(Arrays.equals(start,result)){
        System.out.println("PASS Case "+name(type)+"\t array, size:"+start.length+"\t"+elapsedTime/1000.0+"sec ");
@@ -183,7 +162,6 @@ public class Merge{
        System.out.println("FAIL ! ERROR ! "+name(type)+" array, size:"+size+"  ERROR!");
      }
    }
-
 
 
 
