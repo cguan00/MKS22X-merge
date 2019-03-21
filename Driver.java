@@ -12,7 +12,7 @@ public class Driver{
 
     int[] data3 = {10, 50, 20, 70, 40};
     System.out.println(Merge.printArray(data3));
-    Merge.insertionsort(data3);
+    Merge.insertionsort(data3, 0, data3.length - 1);
     System.out.println(Merge.printArray(data3));
   }
 }
